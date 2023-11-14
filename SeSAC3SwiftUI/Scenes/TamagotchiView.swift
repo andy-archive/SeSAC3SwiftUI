@@ -8,29 +8,18 @@
 import SwiftUI
 
 struct TamagotchiView: View {
-    
+
     @State private var nickname = "Andy"
     @State private var waterDropCount = 0
     @State private var riceCount = 0
-    
+
     @State private var isClicked = false
     @State private var nameTextField = ""
-    
-    @State private var isPresented = false
-    @Environment(\.dismiss) var dismiss
-    
+
     // body -> Computed Properties
     // get으로 되어 있다
     var body: some View {
         VStack(spacing: 20) {
-            HStack {
-                Button("DISMISS") {
-                    dismiss()
-                } .padding(20)
-                Spacer()
-                Spacer()
-            }
-            Spacer()
             TextField("insert name", text: $nameTextField)
                 .padding()
             Toggle("SWITCH", isOn: $isClicked)
@@ -49,7 +38,7 @@ struct TamagotchiView: View {
 struct CountView: View {
     var title: String
     @Binding var count: Int
-    
+
     var body: some View {
         Text("\(title): \(count)")
             .font(.title2)
@@ -67,14 +56,14 @@ struct CountView: View {
 
 /* 📌 @Binding 실습
  struct TamagotchiView: View {
-     
+
      @State private var nickname = "Andy"
      @State private var waterDropCount = 0
      @State private var riceCount = 0
-     
+
      @State private var isClicked = false
      @State private var nameTextField = ""
-     
+
      // body -> Computed Properties
      // get으로 되어 있다
      var body: some View {
@@ -93,11 +82,11 @@ struct CountView: View {
          }
      }
  }
- 
+
  struct CountView: View {
      var title: String
      @Binding var count: Int
-     
+
      var body: some View {
          Text("\(title): \(count)")
              .font(.title2)
@@ -106,13 +95,13 @@ struct CountView: View {
          }
      }
  }
- 
+
  */
 
 /*
  Text("💧 \(waterDropCount)")
  .font(.title2)
- 
+
  Text("Hello, \(riceCount)!")
  .font(.title2)
  */
@@ -123,11 +112,6 @@ struct TamagotchiView_Previews: PreviewProvider {
     }
 }
 
-
-
-
-
-
 /*
  📌 앱에서 UI는 Data에 의존하여 자신의 상태를 결정한다
  */
@@ -137,14 +121,14 @@ struct TamagotchiView_Previews: PreviewProvider {
  */
 
 struct User {
-    
+
     // Stored Properties
     var nickname = "Callie"
-    
+
     // Computed Properties
     var introduce: String {
         return "Hello I am \(nickname)"
-        
+
         /* mutating을 붙여 해결
          mutating get {
              nickname = "Joey"
@@ -152,7 +136,7 @@ struct User {
          }
          */
     }
-    
+
     mutating func changeNickname() {
         nickname = "Joey"
         ///ERROR: Cannot assign to property: 'self' is immutable
@@ -162,10 +146,10 @@ struct User {
 
 /*
  struct TamagotchiView: View {
-     
+
      @State private var nickname = "Andy"
      @State private var count = 0
-     
+
      // body -> Computed Properties
      // get으로 되어 있다
      var body: some View {
@@ -178,7 +162,7 @@ struct User {
                  nickname = "Noah"
                  // 1) var nickname = "Andy"
                  /// ERROR: Cannot assign to property: 'nickname' is a 'let' constant
-                 
+
                  // 2) let nickname = "Andy"
                  /// ERROR: Cannot assign to property: 'self' is immutable
              }
@@ -190,11 +174,11 @@ struct User {
 
 /*
  struct TamagotchiView: View {
-     
+
      @State private var nickname = "Andy"
      @State private var waterDropCount = 0
      @State private var riceCount = 0
-     
+
      // body -> Computed Properties
      // get으로 되어 있다
      var body: some View {
@@ -226,7 +210,7 @@ struct User {
  struct CountView: View {
      var title: String
      @Binding var count: Int
-     
+
      var body: some View {
          Text("\(title): \(count)")
              .font(.title2)
