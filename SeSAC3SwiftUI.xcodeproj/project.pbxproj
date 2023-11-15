@@ -20,6 +20,7 @@
 		38CA8C2C2B04517D00A9C4B7 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CA8C2B2B04517D00A9C4B7 /* CategoryView.swift */; };
 		38CA8C2E2B045BC500A9C4B7 /* TransitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CA8C2D2B045BC500A9C4B7 /* TransitionView.swift */; };
 		38CA8C322B045CA100A9C4B7 /* PosterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CA8C312B045CA100A9C4B7 /* PosterView.swift */; };
+		38EE8A742B046FCC00E629CC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EE8A732B046FCC00E629CC /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		38CA8C2B2B04517D00A9C4B7 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		38CA8C2D2B045BC500A9C4B7 /* TransitionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionView.swift; sourceTree = "<group>"; };
 		38CA8C312B045CA100A9C4B7 /* PosterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterView.swift; sourceTree = "<group>"; };
+		38EE8A732B046FCC00E629CC /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				38CA8C2B2B04517D00A9C4B7 /* CategoryView.swift */,
+				38EE8A732B046FCC00E629CC /* HomeView.swift */,
 				38CA8C312B045CA100A9C4B7 /* PosterView.swift */,
 				38CA8C2D2B045BC500A9C4B7 /* TransitionView.swift */,
 			);
@@ -201,6 +204,7 @@
 				3847EB8D2B01A8E700E086EB /* ContentView.swift in Sources */,
 				38CA8C2C2B04517D00A9C4B7 /* CategoryView.swift in Sources */,
 				383EDC502B03387B00241C8E /* MovieView.swift in Sources */,
+				38EE8A742B046FCC00E629CC /* HomeView.swift in Sources */,
 				3847EC4C2B03081800E086EB /* TamagotchiView.swift in Sources */,
 				3847EB9B2B01B96D00E086EB /* MenuView.swift in Sources */,
 				38CA8C2E2B045BC500A9C4B7 /* TransitionView.swift in Sources */,
