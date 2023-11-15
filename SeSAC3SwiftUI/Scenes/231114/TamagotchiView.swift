@@ -15,11 +15,24 @@ struct TamagotchiView: View {
 
     @State private var isClicked = false
     @State private var nameTextField = ""
+    
+    @State private var isPresented = false
+    @Environment(\.dismiss) var dismiss
 
     // body -> Computed Properties
     // get으로 되어 있다
     var body: some View {
         VStack(spacing: 20) {
+            HStack {
+                Button {
+                    dismiss()
+                } label: {
+                    Image(systemName: "chevron.left")
+                        .padding(10)
+                    Text("뒤로 가기")
+                }
+                Spacer()
+            }
             TextField("insert name", text: $nameTextField)
                 .padding()
             Toggle("SWITCH", isOn: $isClicked)
