@@ -17,6 +17,7 @@
 		3847EB9F2B01B99600E086EB /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3847EB9E2B01B99600E086EB /* README.md */; };
 		3847EBA12B01C8B800E086EB /* RenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3847EBA02B01C8B800E086EB /* RenderView.swift */; };
 		3847EC4C2B03081800E086EB /* TamagotchiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3847EC4B2B03081800E086EB /* TamagotchiView.swift */; };
+		38CA8C2C2B04517D00A9C4B7 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CA8C2B2B04517D00A9C4B7 /* CategoryView.swift */; };
 		38CA8C2E2B045BC500A9C4B7 /* TransitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CA8C2D2B045BC500A9C4B7 /* TransitionView.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +33,7 @@
 		3847EB9E2B01B99600E086EB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		3847EBA02B01C8B800E086EB /* RenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderView.swift; sourceTree = "<group>"; };
 		3847EC4B2B03081800E086EB /* TamagotchiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamagotchiView.swift; sourceTree = "<group>"; };
+		38CA8C2B2B04517D00A9C4B7 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		38CA8C2D2B045BC500A9C4B7 /* TransitionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,6 +93,7 @@
 				383EDC4F2B03387B00241C8E /* MovieView.swift */,
 				3847EBA02B01C8B800E086EB /* RenderView.swift */,
 				3847EC4B2B03081800E086EB /* TamagotchiView.swift */,
+				38CA8C2B2B04517D00A9C4B7 /* CategoryView.swift */,
 				38CA8C2D2B045BC500A9C4B7 /* TransitionView.swift */,
 			);
 			path = Scenes;
@@ -177,6 +180,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3847EB8D2B01A8E700E086EB /* ContentView.swift in Sources */,
+				38CA8C2C2B04517D00A9C4B7 /* CategoryView.swift in Sources */,
 				383EDC502B03387B00241C8E /* MovieView.swift in Sources */,
 				3847EC4C2B03081800E086EB /* TamagotchiView.swift in Sources */,
 				3847EB9B2B01B96D00E086EB /* MenuView.swift in Sources */,
