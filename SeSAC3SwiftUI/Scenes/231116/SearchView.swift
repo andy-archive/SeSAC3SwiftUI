@@ -35,22 +35,22 @@ struct SearchView: View {
     
     var body: some View {
         
-        NavigationView {
+        NavigationStack {
             List { // LazyVStack(alignment: .leading) {
                 ForEach(filteredMovieList, id: \.self) { item in // \.id or \.self를 통한 고유성 판단
-                    
-                    NavigationLink {
-                        SearchDetailView(movie: item)
-                    } label: {
+                    NavigationLink(value: item) {
                         HStack {
                             Circle()
                                 .foregroundStyle(item.color)
                             Text("\(item.name)")
-                                .navigationTitle("Search")
                         }
                         .frame(height: 60)
                     }
                 }
+            }
+            .navigationTitle("Search")
+            .navigationDestination(for: Movie.self) { item in
+                SearchDetailView(movie: item)
             }
         }
         .searchable(text: $query, placement: .navigationBarDrawer, prompt: "Insert you want to search")
@@ -93,6 +93,26 @@ struct SearchDetailView: View {
         }
     }
 }
+
+/* NavigationView → NavigationLink(destination) & Detail
+ NavigationView {
+     List { // LazyVStack(alignment: .leading) {
+         ForEach(filteredMovieList, id: \.self) { item in // \.id or \.self를 통한 고유성 판단
+             
+             NavigationLink {
+                 SearchDetailView(movie: item)
+             } label: {
+                 HStack {
+                     Circle()
+                         .foregroundStyle(item.color)
+                     Text("\(item.name)")
+                 }
+                 .frame(height: 60)
+             }
+         }
+     }
+ 
+ */
 
 /*
  HStack {
