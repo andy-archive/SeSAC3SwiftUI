@@ -14,31 +14,41 @@ import SwiftUI
  */
 
 struct TransitionView: View {
+    
+    init() {
+        print("TransitionView init")
+        print("왜 여러 번 프린트 되지...")
+        print()
+    }
+    
     @State private var isFull = false
     @State private var isSheet = false
     
     var body: some View {
         NavigationView {
-            HStack(spacing: 20.0) {
+            VStack(spacing: 50.0) {
                 Button("Full") {
                     isFull.toggle()
                 }
                 Button("Sheet") {
                     isSheet = true
                 }
-                NavigationLink("Push") {
-                    RenderView()
+                NavigationLink("Push RenderView") {
+                    NavigationLazyView(build: RenderView())
+                }
+                NavigationLink("Push PosterView") {
+                    NavigationLazyView(build: PosterView())
                 }
             }
             .sheet(
                 isPresented: $isSheet,
                 content: {
-                RenderView()
+                TamagotchiView()
             })
             .fullScreenCover(
                 isPresented: $isFull,
                 content: {
-                RenderView()
+                TamagotchiView()
             })
         }
     }

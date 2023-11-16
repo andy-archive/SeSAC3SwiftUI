@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct TamagotchiView: View {
+    
+    init() {
+        print("TamagotchiView init")
+        print()
+    }
 
     @State private var nickname = "Andy"
     @State private var waterDropCount = 0
@@ -44,6 +49,9 @@ struct TamagotchiView: View {
                 .background(.blue)
             CountView(title: "💧", count: $waterDropCount)
             CountView(title: "🌾", count: $riceCount)
+            NavigationLink("PUSH") {
+                MovieView()
+            }
         }
     }
 }
