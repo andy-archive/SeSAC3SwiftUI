@@ -7,15 +7,44 @@
 
 import SwiftUI
 
-/* 새로운 SearchView 231116 1230*/
+/* Movie 모델 */
+struct Movie: Hashable, Identifiable {
+    let id = UUID()
+    let name: String
+    let color = Color.random()
+}
+
+/* 새로운 SearchView 231116 1400 */
 struct SearchView: View {
     
     @State private var query = "QUERY"
     
+    let movieList = [
+        Movie(name: "A"), Movie(name: "Aab"),
+        Movie(name: "Avengers"), Movie(name: "Avengers"),
+        Movie(name: "Harry Potter"), Movie(name: "Eternal Sunshine"),
+        Movie(name: "Shrek"), Movie(name: "Eternal Sunshine"),
+    ]
+    
     var body: some View {
+        
         NavigationView {
-            Text("abcd")
-                .navigationTitle("Search")
+            List { // LazyVStack(alignment: .leading) {
+                ForEach(movieList, id: \.self) { item in // \.id or \.self를 통한 고유성 판단
+                    
+                    NavigationLink {
+                        SearchDetailView(movie: item)
+                    } label: {
+                        HStack {
+                            Circle()
+                                .foregroundStyle(item.color)
+                            Text("\(item.name)")
+                                .navigationTitle("Search")
+                        }
+                        .frame(height: 60)
+                    }
+                }
+            }
         }
         .searchable(text: $query, placement: .navigationBarDrawer, prompt: "Insert you want to search")
         .onSubmit(of: .search) {
@@ -23,6 +52,83 @@ struct SearchView: View {
         }
     }
 }
+
+struct SearchView_Previews: PreviewProvider {
+    static var previews: some View {
+        SearchView()
+    }
+}
+
+struct SearchDetailView: View {
+    
+    let movie: Movie
+    
+    var body: some View {
+        VStack {
+            Text(movie.name)
+                .font(.title)
+                .padding(20)
+            Button("TITLE & ACTION") {
+                print("\(String(describing: self))")
+            }
+            Button {
+                print("ACTION & LABEL")
+            } label: {
+                HStack {
+                    Circle()
+                        .foregroundStyle(Color.random())
+                    Text("ACTION & LABEL")
+                        .navigationTitle("Search")
+                }
+                .frame(width: 140)
+            }
+
+        }
+    }
+}
+
+/*
+ HStack {
+     Circle()
+         .foregroundStyle(item.color)
+     Text("\(item.name)")
+         .navigationTitle("Search")
+     Spacer()
+     Button {
+         print("CLICKED")
+     } label: {
+         HStack {
+             Text("CLICK")
+             Image(systemName: "chevron.right")
+         }
+     }
+ }
+ .frame(height: 60)
+ */
+
+/*
+ let movie = ["A", "Aab", "Andy", "Noah", "Boribob", "Ssaboo", "Ironman", "Harry Potter", "Iris"]
+ */
+
+/* 새로운 SearchView 1 231116 1230*/
+// import SwiftUI
+//
+//
+// struct SearchView: View {
+//
+//     @State private var query = "QUERY"
+//
+//     var body: some View {
+//         NavigationView {
+//             Text("abcd")
+//                 .navigationTitle("Search")
+//         }
+//         .searchable(text: $query, placement: .navigationBarDrawer, prompt: "Insert you want to search")
+//         .onSubmit(of: .search) {
+//             print("SEARCHED")
+//         }
+//     }
+// }
 
 /* 기존 SearchView */
 //struct SearchView: View {
@@ -63,11 +169,6 @@ struct SearchView: View {
 //    }
 //}
 
-struct SearchView_Previews: PreviewProvider {
-    static var previews: some View {
-        SearchView()
-    }
-}
 
 struct HueView: View {
     
