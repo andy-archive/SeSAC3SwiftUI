@@ -22,6 +22,7 @@
 		38CA8C322B045CA100A9C4B7 /* PosterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CA8C312B045CA100A9C4B7 /* PosterView.swift */; };
 		38EE8A742B046FCC00E629CC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EE8A732B046FCC00E629CC /* HomeView.swift */; };
 		38EE8A762B0471ED00E629CC /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EE8A752B0471ED00E629CC /* StartView.swift */; };
+		38EE8A892B05A88100E629CC /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EE8A882B05A88100E629CC /* SearchView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		38CA8C312B045CA100A9C4B7 /* PosterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterView.swift; sourceTree = "<group>"; };
 		38EE8A732B046FCC00E629CC /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		38EE8A752B0471ED00E629CC /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		38EE8A882B05A88100E629CC /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			children = (
 				38CA8C2F2B045C4E00A9C4B7 /* 231114 */,
 				38CA8C302B045C5300A9C4B7 /* 231115 */,
+				38EE8A852B05A84F00E629CC /* 231116 */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -130,6 +133,14 @@
 				38CA8C2D2B045BC500A9C4B7 /* TransitionView.swift */,
 			);
 			path = 231115;
+			sourceTree = "<group>";
+		};
+		38EE8A852B05A84F00E629CC /* 231116 */ = {
+			isa = PBXGroup;
+			children = (
+				38EE8A882B05A88100E629CC /* SearchView.swift */,
+			);
+			path = 231116;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,6 +219,7 @@
 				38EE8A762B0471ED00E629CC /* StartView.swift in Sources */,
 				38CA8C2C2B04517D00A9C4B7 /* CategoryView.swift in Sources */,
 				383EDC502B03387B00241C8E /* MovieView.swift in Sources */,
+				38EE8A892B05A88100E629CC /* SearchView.swift in Sources */,
 				38EE8A742B046FCC00E629CC /* HomeView.swift in Sources */,
 				3847EC4C2B03081800E086EB /* TamagotchiView.swift in Sources */,
 				3847EB9B2B01B96D00E086EB /* MenuView.swift in Sources */,
