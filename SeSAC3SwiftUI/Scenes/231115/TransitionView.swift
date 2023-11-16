@@ -17,6 +17,8 @@ struct TransitionView: View {
     
     init() {
         print("TransitionView init")
+        print("왜 여러 번 프린트 되지...")
+        print()
     }
     
     @State private var isFull = false
@@ -24,15 +26,18 @@ struct TransitionView: View {
     
     var body: some View {
         NavigationView {
-            HStack(spacing: 20.0) {
+            VStack(spacing: 50.0) {
                 Button("Full") {
                     isFull.toggle()
                 }
                 Button("Sheet") {
                     isSheet = true
                 }
-                NavigationLink("Push") {
-                    TamagotchiView()
+                NavigationLink("Push TamagotchiView") {
+                    NavigationLazyView(build: TamagotchiView())
+                }
+                NavigationLink("Push PosterView") {
+                    NavigationLazyView(build: PosterView())
                 }
             }
             .sheet(
