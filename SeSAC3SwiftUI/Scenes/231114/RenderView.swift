@@ -9,6 +9,11 @@ import SwiftUI
 
 struct RenderView: View {
     
+    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.isPresented) var isPresented
+    @Environment(\.dismiss) var dismiss
+    @Environment(\.colorScheme) var myColor
+    
     @State var age = 10
     
     var body: some View {
@@ -40,6 +45,12 @@ struct RenderView: View {
                     print("CLICKED")
                     age = Int.random(in: 1...100)
                 }
+                Button(myColor == .dark ? "DARK MODE" : "LIGHT MODE") {
+                    dismiss.callAsFunction()
+                    //presentationMode.wrappedValue.dismiss()
+                }
+                .background(myColor == .dark ? .white : .yellow)
+                .foregroundColor(myColor == .dark ? .black : .green)
             }
             .navigationTitle("TITLE")
             // 가장 바깥 영역이 아닌 NavigationView 끝에 위치해야 함

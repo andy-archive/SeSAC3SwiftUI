@@ -33,8 +33,8 @@ struct TransitionView: View {
                 Button("Sheet") {
                     isSheet = true
                 }
-                NavigationLink("Push TamagotchiView") {
-                    NavigationLazyView(build: TamagotchiView())
+                NavigationLink("Push RenderView") {
+                    NavigationLazyView(build: RenderView())
                 }
                 NavigationLink("Push PosterView") {
                     NavigationLazyView(build: PosterView())
