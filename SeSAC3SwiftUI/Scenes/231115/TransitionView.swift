@@ -14,6 +14,11 @@ import SwiftUI
  */
 
 struct TransitionView: View {
+    
+    init() {
+        print("TransitionView init")
+    }
+    
     @State private var isFull = false
     @State private var isSheet = false
     
@@ -27,18 +32,18 @@ struct TransitionView: View {
                     isSheet = true
                 }
                 NavigationLink("Push") {
-                    RenderView()
+                    TamagotchiView()
                 }
             }
             .sheet(
                 isPresented: $isSheet,
                 content: {
-                RenderView()
+                TamagotchiView()
             })
             .fullScreenCover(
                 isPresented: $isFull,
                 content: {
-                RenderView()
+                TamagotchiView()
             })
         }
     }

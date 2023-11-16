@@ -9,6 +9,11 @@ import SwiftUI
 
 struct MovieView: View {
     
+    init() {
+        print("MovieView init ================")
+        print()
+    }
+    
     @State private var isPresented = false
     
     var body: some View {
