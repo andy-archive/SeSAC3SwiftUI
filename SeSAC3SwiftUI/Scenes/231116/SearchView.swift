@@ -17,20 +17,27 @@ struct Movie: Hashable, Identifiable {
 /* 새로운 SearchView 231116 1400 */
 struct SearchView: View {
     
-    @State private var query = "QUERY"
+    @State private var query = ""
+    
+    var filteredMovieList: [Movie] {
+        return query.isEmpty ? movieList : movieList.filter { movie in
+            movie.name.contains(query)
+        }
+    }
     
     let movieList = [
         Movie(name: "A"), Movie(name: "Aab"),
         Movie(name: "Avengers"), Movie(name: "Avengers"),
         Movie(name: "Harry Potter"), Movie(name: "Eternal Sunshine"),
         Movie(name: "Shrek"), Movie(name: "Eternal Sunshine"),
+        Movie(name: "Mission Impossible"),
     ]
     
     var body: some View {
         
         NavigationView {
             List { // LazyVStack(alignment: .leading) {
-                ForEach(movieList, id: \.self) { item in // \.id or \.self를 통한 고유성 판단
+                ForEach(filteredMovieList, id: \.self) { item in // \.id or \.self를 통한 고유성 판단
                     
                     NavigationLink {
                         SearchDetailView(movie: item)
