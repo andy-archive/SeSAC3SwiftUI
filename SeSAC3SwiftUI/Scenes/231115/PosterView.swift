@@ -16,9 +16,9 @@ struct PosterView: View {
             LazyVStack {
                 ForEach(0..<50) { item in
                     AsyncImageView()
-                        .frame(width: 100, height: 100)
-                        .onTapGesture {
-                            print("TAPPED")
+                        .frame(width: 100, height: 100) // 📌 왜 각주처리 하면 실패가 뜰까? -> 네트워크 과호출 방지 (실패 시 전후 사진 볼 것)
+                        .onTapGesture { // 📌 print가 왜 되는 걸까? -> @escaping -> 비어 있는 함수 공간
+                            print(#function)
                             isPresented.toggle()
                         }
                 }
@@ -45,6 +45,7 @@ struct AsyncImageView: View {
             case .success(let image):
                 image
                     .scaledToFit()
+                    .frame(width: 100, height: 100)
                     .clipShape(RoundedRectangle(cornerRadius: 20))
             case .failure(_):
                 Image(systemName: "photo")
