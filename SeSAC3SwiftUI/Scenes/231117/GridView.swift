@@ -11,8 +11,37 @@ struct GridView: View {
     
     @Binding var movieList: [Movie]
     
+    @State private var dummy = Array(1...100).map { "Movie\n#\($0)" }
+    
+    private let gridItem = GridItem(.fixed(200))
+    private let layout = [
+        GridItem(.flexible(), spacing: 20),
+        GridItem(.flexible(), spacing: 20),
+        GridItem(.flexible(), spacing: 20),
+        
+//        /* GridItem parameters */
+//    GridItem(.fixed(100)),
+//    GridItem(.flexible(minimum: 100, maximum: 250)),
+    ]
+    
     var body: some View {
-        Text("Hello, World!")
+        ScrollView {
+            LazyVGrid(columns: layout, alignment: .center, spacing: 30) {
+                ForEach(dummy, id: \.self) { item in
+                    ZStack {
+                        Color.random().opacity(0.2)
+                        Text(item)
+                            .bold()
+                            .font(.title3)
+                    }
+                }
+            }
+            .padding(20)
+        }
+        /* 화면이 떴을 때 함수 실행 */
+        .onAppear {
+            dummy.insert("INSERTED", at: 0)
+        }
     }
 }
 
