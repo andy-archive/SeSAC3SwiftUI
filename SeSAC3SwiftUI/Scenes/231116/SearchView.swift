@@ -49,8 +49,26 @@ struct SearchView: View {
                 }
             }
             .navigationTitle("Search")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItemGroup(placement: .navigationBarTrailing) { // .topBarTrailing (Latest)
+                    Button {
+                        print("PLUS BUTTON CLICKED")
+                    } label: {
+                        Image(systemName: "plus")
+                    }
+                }
+                ToolbarItemGroup(placement: .navigationBarLeading) { // .topBarLeading (Latest)
+                    Button {
+                        print("MAP Button CLICKED")
+                    } label: {
+                        Image(systemName: "map")
+                    }
+                }
+            }
             .navigationDestination(for: Movie.self) { item in
                 SearchDetailView(movie: item)
+            
             }
         }
         .searchable(text: $query, placement: .navigationBarDrawer, prompt: "Insert you want to search")
