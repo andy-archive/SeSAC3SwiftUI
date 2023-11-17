@@ -12,12 +12,14 @@ struct Movie: Hashable, Identifiable {
     let id = UUID()
     let name: String
     let color = Color.random()
+    let count = Int.random(in: 1...10)
 }
 
 /* 새로운 SearchView 231116 1400 */
 struct SearchView: View {
 
     @State private var query = ""
+    @State private var isChartViewPresented = false
 
     var filteredMovieList: [Movie] {
         return query.isEmpty ? movieList : movieList.filter { movie in
@@ -53,6 +55,7 @@ struct SearchView: View {
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarTrailing) { // .topBarTrailing (Latest)
                     Button {
+                        isChartViewPresented = true
                         print("PLUS BUTTON CLICKED")
                     } label: {
                         Image(systemName: "plus")
@@ -74,6 +77,9 @@ struct SearchView: View {
         .searchable(text: $query, placement: .navigationBarDrawer, prompt: "Insert you want to search")
         .onSubmit(of: .search) {
             print("SEARCHED")
+        }
+        .sheet(isPresented: $isChartViewPresented) {
+            ChartView(movieList: movieList)
         }
     }
 }
